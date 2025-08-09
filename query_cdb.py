@@ -1,7 +1,7 @@
 # query_data.py
 
 import pprint
-
+import textwrap
 # Notice we only need to import our manager now
 from cdb_manager import get_collection, get_embedding_model
 
@@ -37,9 +37,9 @@ if __name__ == "__main__":
     print("--- 📚 Interactive Document Query Session ---")
     print("Ask a question about your documents. Type 'exit' to quit.")
 
-    # A loop to keep the session going
     while True:
-        user_question = input("\nAsk a question: ")
+        # Added an extra newline for better spacing before the prompt
+        user_question = input("\n\nAsk a question: ")
 
         if user_question.lower() == 'exit':
             print("Exiting session. Goodbye!")
@@ -48,16 +48,15 @@ if __name__ == "__main__":
         if not user_question.strip():
             continue
 
-        # 3. Perform the search and get the results
-        relevant_chunks = search_db(user_question)
+        relevant_chunks = search_db(user_question, num_results=3)
 
-        # 4. Print the results nicely
-        print("\n--- Most Relevant Chunks ---")
+        print("\n✅ --- Here are the most relevant results ---")
         if relevant_chunks:
             for i, chunk in enumerate(relevant_chunks):
-                print(f"Result {i + 1}:")
-                # Using pprint to handle multiline strings nicely
-                pprint.pprint(chunk)
-                print("-" * 20)
+                # This block is the main change for better formatting
+                print(f"\n--- Result {i + 1} ---")
+                # We use textwrap to indent the whole block of text
+                formatted_text = textwrap.indent(text=chunk, prefix="    ")
+                print(formatted_text)
         else:
-            print("No relevant documents found for your query.")
+            print("\n❌ No relevant documents found for your query.")
