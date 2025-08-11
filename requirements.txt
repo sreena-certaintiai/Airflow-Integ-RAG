@@ -1,0 +1,13 @@
+PyMuPDF
+nltk~=3.9.1
+tiktoken~=0.11.0
+chromadb~=0.5.23
+sentence-transformers~=2.7.0
+# Astro Runtime includes the following pre-installed providers packages: https://www.astronomer.io/docs/astro/runtime-image-architecture#provider-packages
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+torchvision
+requests
+logging
+pandas
+pendulum
