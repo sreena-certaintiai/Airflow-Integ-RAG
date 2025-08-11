@@ -1,9 +1,8 @@
 # query_data.py
 
-import pprint
 import textwrap
 # Notice we only need to import our manager now
-from cdb_manager import get_collection, get_embedding_model
+from Core.cdb_manager import get_collection, get_embedding_model
 
 
 def search_db(query: str, num_results: int = 3):

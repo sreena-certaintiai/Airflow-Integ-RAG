@@ -4,12 +4,6 @@ import tiktoken
 import nltk
 
 # Download the sentence tokenizer model (only needs to be done once)
-try:
-    nltk.data.find('tokenizers/punkt')
-except nltk.downloader.DownloadError:
-    print("Downloading 'punkt' model for NLTK...")
-    nltk.download('punkt')
-
 
 def extract_text_from_pdfs(folder_path: str) -> str:
     """

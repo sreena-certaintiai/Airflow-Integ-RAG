@@ -4,7 +4,7 @@ import chromadb
 from sentence_transformers import SentenceTransformer
 
 # --- Configuration Constants ---
-DB_PATH = "vector_db"
+DB_PATH = "../vector_db"
 COLLECTION_NAME = "pdf_docs_mini_lm"
 MODEL_NAME = 'all-MiniLM-L6-v2'
 

@@ -2,7 +2,7 @@ import os
 
 # --- Import our custom functions and new DB manager ---
 from sen_based_chunk import extract_text_from_pdfs, split_text_into_chunks
-from cdb_manager import get_collection, get_embedding_model
+from Core.cdb_manager import get_collection, get_embedding_model
 
 # --- Main Execution ---
 if __name__ == "__main__":
